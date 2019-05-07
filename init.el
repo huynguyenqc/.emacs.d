@@ -40,10 +40,17 @@ package-archives
  '(custom-safe-themes
    (quote
     ("8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
+ '(ido-enable-flex-matching t)
+ '(ido-mode (quote both) nil (ido))
  '(menu-bar-mode nil)
+ '(nyan-mode t)
  '(nyan-wavy-trail nil)
- '(package-selected-packages (quote (nyan-mode solarized-theme avy evil magit helm)))
- '(tool-bar-mode nil))
+ '(package-selected-packages
+   (quote
+    (multi-term grep-a-lot nyan-mode solarized-theme avy evil magit helm)))
+ '(server-mode t)
+ '(tool-bar-mode nil)
+ '(uniquify-buffer-name-style (quote post-forward) nil (uniquify)))
 (custom-set-faces
  ;; custom-set-faces was added by Custom.
  ;; If you edit it by hand, you could mess it up, so be careful.
@@ -56,3 +63,20 @@ package-archives
   :config (global-set-key (kbd "C-:") 'avy-goto-char))
 
 (global-set-key (kbd "C-x g") 'magit-status)
+
+;;; --------------------------------------------------
+;;; CURSOR MOVEMENTS
+
+;; Single char cursor movement
+(global-set-key (kbd "M-h") 'backward-char)
+(global-set-key (kbd "M-i") 'forward-char)
+(global-set-key (kbd "M-e") 'previous-line)
+(global-set-key (kbd "M-n") 'next-line)
+
+;; Move by word
+(global-set-key (kbd "M-l") 'backward-word)
+(global-set-key (kbd "M-u") 'forward-word)
+
+;; Move by paragraph
+(global-set-key (kbd "M-L") 'backward-paragraph)
+(global-set-key (kbd "M-U") 'forward-paragraph)
