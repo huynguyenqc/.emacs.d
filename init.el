@@ -18,7 +18,28 @@ package-archives
 (define-key global-map (kbd "C-c C-s") 'ielm)
 (define-key global-map (kbd "s-k") 'ublt/switch-to-last-buffer)
 
-(use-package helm)
+(use-package highlight-symbol
+  :ensure t)
+
+(use-package company
+  :ensure t
+  :config (global-company-mode 1))
+
+(use-package helm
+  :config (helm-mode 1))
+(global-set-key (kbd "C-x b") 'helm-mini)
+(global-set-key (kbd "C-x C-f") 'helm-find-files)
+
+(use-package helm-config)
+(use-package swiper-helm
+  :ensure t)
+(global-set-key (kbd "C-f") 'swiper-helm)
+(use-package helm-rg
+  :ensure t)
+(use-package rg
+  :ensure t)
+(use-package helm-projectile
+  :ensure t)
 
 (use-package magit
   :ensure t)
@@ -28,9 +49,22 @@ package-archives
 
 (use-package evil :ensure t)
 
+(use-package elisp-slime-nav
+  :ensure t)
+(global-set-key (kbd "C-t") 'elisp-slime-nav-find-elisp-thing-at-point)
+
 (use-package avy
   :ensure t
-  :config (global-set-key (kbd "C-:") 'avy-goto-char))
+  :config (global-set-key (kbd "C-:") 'avy-goto-char)
+  :custom (avy-keys (list
+		     ?t ?n ;index
+		     ?p ?l ;index
+		     ?s ?e ;middle
+		     ?f ?u ;middle
+		     ?r ?i ;ring
+		     ?w ?y ;ring
+		     ?a ?o ;pinkies
+)))
 
 (global-set-key (kbd "C-x g") 'magit-status)
 
@@ -56,16 +90,19 @@ package-archives
   :init
   (elpy-enable))
 
-(autoload 'jedi:setup "jedi" nil t)
-(add-hook 'python-mode-hook 'jedi:setup)
-(setq jedi:complete-on-dot t)
+;; (autoload 'jedi:setup "jedi" nil t)
+;; (add-hook 'python-mode-hook 'jedi:setup)
+;; (setq jedi:complete-on-dot t)
 
-;(use-package lsp-mode
-;  :config
-;  (require 'lsp-clients)
-;  (add-hook 'python-mode-hook 'lsp))
-;(use-package company-lsp)
-;(use-package lsp-ui)
+;; (use-package lsp-mode
+;;  :ensure t
+;;  :config
+;;  (require 'lsp-clients)
+;;  (add-hook 'python-mode-hook 'lsp))
+;; (use-package company-lsp
+;;   :ensure t)
+;; (use-package lsp-ui
+;;   :ensure t)
 
 (add-to-list 'load-path "/some/path/neotree")
 (require 'neotree)
@@ -79,3 +116,6 @@ package-archives
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
 
+(use-package paredit
+  :ensure t
+  :hook ((emacs-lisp-mode ielm-mode) . paredit-mode))

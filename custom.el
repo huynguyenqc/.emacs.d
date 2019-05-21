@@ -8,6 +8,9 @@
    [default default default italic underline success warning error])
  '(ansi-color-names-vector
    ["#282a36" "#ff5555" "#50fa7b" "#f1fa8c" "#61bfff" "#ff79c6" "#8be9fd" "#f8f8f2"])
+ '(avy-keys
+   (quote
+    (116 110 112 108 115 101 102 117 114 105 119 121 97 111)))
  '(blink-cursor-mode nil)
  '(compilation-message-face (quote default))
  '(cua-global-mark-cursor-color "#2aa198")
@@ -20,11 +23,6 @@
     ("100e7c5956d7bb3fd0eebff57fde6de8f3b9fafa056a2519f169f85199cc1c96" "a24c5b3c12d147da6cef80938dca1223b7c7f70f2f382b26308eba014dc4833a" "8aebf25556399b58091e533e455dd50a6a9cba958cc4ebb0aab175863c25b9a4" default)))
  '(fci-rule-color "#6272a4")
  '(highlight-changes-colors (quote ("#d33682" "#6c71c4")))
- '(highlight-symbol-colors
-   (--map
-    (solarized-color-blend it "#002b36" 0.25)
-    (quote
-     ("#b58900" "#2aa198" "#dc322f" "#6c71c4" "#859900" "#cb4b16" "#268bd2"))))
  '(highlight-symbol-foreground-color "#93a1a1")
  '(highlight-tail-colors
    (quote
@@ -59,7 +57,7 @@
  '(objed-cursor-color "#ff5555")
  '(package-selected-packages
    (quote
-    (neotree doom-themes jedi company-lsp lsp-python flycheck-pyflakes paredit elpy lsp-ui highlight-parentheses lsp-mode flycheck python immaterial-theme material-theme pyenv-mode python-mode rainbow-mode jdee multi-term grep-a-lot nyan-mode solarized-theme avy evil magit helm)))
+    (highlight-symbol rg helm-projectile helm-rg elisp-slime-nav swiper-helm helm-config neotree doom-themes jedi company-lsp lsp-python flycheck-pyflakes paredit elpy lsp-ui highlight-parentheses lsp-mode flycheck python immaterial-theme material-theme pyenv-mode python-mode rainbow-mode jdee multi-term grep-a-lot nyan-mode solarized-theme avy evil magit helm)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(server-mode t)
