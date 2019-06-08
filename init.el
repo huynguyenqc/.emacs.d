@@ -84,6 +84,7 @@ package-archives
 ;; Move by paragraph
 (global-set-key (kbd "M-L") 'backward-paragraph)
 (global-set-key (kbd "M-U") 'forward-paragraph)
+(global-set-key (kbd "s-g") 'goto-line)
 
 (use-package elpy
   :ensure t
@@ -119,3 +120,14 @@ package-archives
 (use-package paredit
   :ensure t
   :hook ((emacs-lisp-mode ielm-mode) . paredit-mode))
+
+(use-package ggtags
+  :ensure t)
+
+;; Elixir mode
+(use-package elixir-mode
+  :ensure t)
+
+;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
+(add-hook 'elixir-mode-hook
+  (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
