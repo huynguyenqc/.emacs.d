@@ -108,6 +108,7 @@ package-archives
 (add-to-list 'load-path "/some/path/neotree")
 (require 'neotree)
 (global-set-key [f8] 'neotree-toggle)
+(setq neo-window-fixed-size nil)
 
 (toggle-scroll-bar -1)
 (global-set-key [f7] 'display-line-numbers-mode)
@@ -131,3 +132,18 @@ package-archives
 ;; Create a buffer-local hook to run elixir-format on save, only when we enable elixir-mode.
 (add-hook 'elixir-mode-hook
   (lambda () (add-hook 'before-save-hook 'elixir-format nil t)))
+
+(global-set-key (kbd "C-o") (kbd "C-e C-m")) ; open and jump to new line
+(global-set-key (kbd "<s-down>") (kbd "C-3 C-x ^")) ; enlarge window
+
+(defun duplicate-line()
+  (interactive)
+  (move-beginning-of-line 1)
+  (kill-line)
+  (yank)
+  (open-line 1)
+  (next-line 1)
+  (yank)
+)
+(global-unset-key (kbd "C-d"))
+(global-set-key (kbd "C-d") 'duplicate-line)

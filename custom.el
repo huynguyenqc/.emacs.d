@@ -57,7 +57,7 @@
  '(objed-cursor-color "#ff5555")
  '(package-selected-packages
    (quote
-    (highlight-symbol rg helm-projectile helm-rg elisp-slime-nav swiper-helm helm-config neotree doom-themes jedi company-lsp lsp-python flycheck-pyflakes paredit elpy lsp-ui highlight-parentheses lsp-mode flycheck python immaterial-theme material-theme pyenv-mode python-mode rainbow-mode jdee multi-term grep-a-lot nyan-mode solarized-theme avy evil magit helm)))
+    (elixir-mode htmlize ggtags highlight-symbol rg helm-projectile helm-rg elisp-slime-nav swiper-helm helm-config neotree doom-themes jedi company-lsp lsp-python flycheck-pyflakes paredit elpy lsp-ui highlight-parentheses lsp-mode flycheck python immaterial-theme material-theme pyenv-mode python-mode rainbow-mode jdee multi-term grep-a-lot nyan-mode solarized-theme avy evil magit helm)))
  '(pos-tip-background-color "#073642")
  '(pos-tip-foreground-color "#93a1a1")
  '(server-mode t)
