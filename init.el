@@ -147,3 +147,11 @@ package-archives
 )
 (global-unset-key (kbd "C-d"))
 (global-set-key (kbd "C-d") 'duplicate-line)
+
+(desktop-save-mode 1)
+
+;; js mode
+(use-package js2-mode
+  :ensure t)
+(add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
+(setq js2-strict-missing-semi-warning nil)
