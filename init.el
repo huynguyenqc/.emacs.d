@@ -113,7 +113,7 @@ package-archives
 (toggle-scroll-bar -1)
 (global-set-key [f7] 'display-line-numbers-mode)
 
-(add-to-list 'default-frame-alist '(font . "DejaVu Sans Mono-11"))
+(set-default-font "Tlwg Mono-11")
 
 (setq custom-file "~/.emacs.d/custom.el")
 (load custom-file)
