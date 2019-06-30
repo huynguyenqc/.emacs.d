@@ -154,4 +154,22 @@ package-archives
 (use-package js2-mode
   :ensure t)
 (add-hook 'js2-mode-hook (lambda () (setq js2-basic-offset 2)))
+(add-to-list 'auto-mode-alist '("\\.js\\'" . js2-mode))
+;; (add-hook 'javascript-mode-hook (lambda () (setq js-indent-level 2)))
 (setq js2-strict-missing-semi-warning nil)
+(use-package prettier-js
+  :ensure t)
+(add-hook 'js2-mode-hook 'prettier-js-mode)
+(add-hook 'web-mode-hook 'prettier-js-mode)
+
+(global-set-key (kbd "s-/") 'comment-line)
+
+;; pug mode
+(use-package pug-mode
+  :ensure t)
+
+;; scala mode
+(use-package scala-mode
+  :ensure t
+  :interpreter
+  ("scala" . scala-mode))
